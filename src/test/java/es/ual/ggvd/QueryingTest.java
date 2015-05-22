@@ -58,6 +58,6 @@ public class QueryingTest {
   @Test
   public void shouldAggregate() {
     mongodb.setupActors();
-    mongodb.aggregate();
+    mongodb.totalOfActorsByGenre();
   }
 }

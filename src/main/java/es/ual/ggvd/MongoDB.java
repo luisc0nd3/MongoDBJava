@@ -325,7 +325,7 @@ public class MongoDB {
   /**
    * Shows the total of actors by genre using the framework aggregation
    */
-  public void aggregate() {
+  public void totalOfActorsByGenre() {
     
     // Select the "actor" collection
     MongoCollection<Document> collection = db.getCollection("actor");
