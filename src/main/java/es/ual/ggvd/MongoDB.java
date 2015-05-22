@@ -35,7 +35,10 @@ public class MongoDB {
 
     // Connect to the MongoDB server with internal connection pooling
     mongoClient = new MongoClient(serverAddress);
-
+    
+    // Getting a connection easily avoiding ServerAddress
+    // mongoClient = new MongoClient(host, port);
+    
     // Select the database
     db = mongoClient.getDatabase(database);
 
