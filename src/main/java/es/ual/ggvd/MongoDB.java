@@ -340,11 +340,14 @@ public class MongoDB {
 
     // run aggregation
     List<Document> pipeline = Arrays.asList(match, group);
-    AggregateIterable<Document> output = collection.aggregate(pipeline);
+    MongoCursor<Document> output = collection.aggregate(pipeline).iterator();
     
-    for (Document document : output) {
-      System.out.println(document.toJson());
+    System.out.println("*** Listing the total of actors by genre");
+    
+    while (output.hasNext()) {
+      Document document = output.next();
       
+      System.out.println(document.getString("_id") + ": " + document.getInteger("total"));
     }
   }
 
